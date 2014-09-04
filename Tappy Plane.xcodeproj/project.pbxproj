@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4A213B019B90EFD0018E28C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213AF19B90EFD0018E28C /* Foundation.framework */; };
+		D4A213B219B90EFD0018E28C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213B119B90EFD0018E28C /* CoreGraphics.framework */; };
+		D4A213B419B90EFD0018E28C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213B319B90EFD0018E28C /* UIKit.framework */; };
+		D4A213B619B90EFD0018E28C /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213B519B90EFD0018E28C /* SpriteKit.framework */; };
+		D4A213BC19B90EFD0018E28C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4A213BA19B90EFD0018E28C /* InfoPlist.strings */; };
+		D4A213BE19B90EFD0018E28C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213BD19B90EFD0018E28C /* main.m */; };
+		D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213C119B90EFD0018E28C /* GAAppDelegate.m */; };
+		D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A213C319B90EFD0018E28C /* Main.storyboard */; };
+		D4A213C819B90EFD0018E28C /* GAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213C719B90EFD0018E28C /* GAViewController.m */; };
+		D4A213CB19B90EFD0018E28C /* GAMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213CA19B90EFD0018E28C /* GAMyScene.m */; };
+		D4A213CD19B90EFD0018E28C /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A213CC19B90EFD0018E28C /* Spaceship.png */; };
+		D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A213CE19B90EFD0018E28C /* Images.xcassets */; };
+		D4A213D619B90EFD0018E28C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213D519B90EFD0018E28C /* XCTest.framework */; };
+		D4A213D719B90EFD0018E28C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213AF19B90EFD0018E28C /* Foundation.framework */; };
+		D4A213D819B90EFD0018E28C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213B319B90EFD0018E28C /* UIKit.framework */; };
+		D4A213E019B90EFD0018E28C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4A213DE19B90EFD0018E28C /* InfoPlist.strings */; };
+		D4A213E219B90EFD0018E28C /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213E119B90EFD0018E28C /* Tappy_PlaneTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4A213D919B90EFD0018E28C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4A213A419B90EFD0018E28C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4A213AB19B90EFD0018E28C;
+			remoteInfo = "Tappy Plane";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4A213AC19B90EFD0018E28C /* Tappy Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tappy Plane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4A213AF19B90EFD0018E28C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4A213B119B90EFD0018E28C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D4A213B319B90EFD0018E28C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D4A213B519B90EFD0018E28C /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		D4A213B919B90EFD0018E28C /* Tappy Plane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tappy Plane-Info.plist"; sourceTree = "<group>"; };
+		D4A213BB19B90EFD0018E28C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4A213BD19B90EFD0018E28C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4A213BF19B90EFD0018E28C /* Tappy Plane-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tappy Plane-Prefix.pch"; sourceTree = "<group>"; };
+		D4A213C019B90EFD0018E28C /* GAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAAppDelegate.h; sourceTree = "<group>"; };
+		D4A213C119B90EFD0018E28C /* GAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAAppDelegate.m; sourceTree = "<group>"; };
+		D4A213C419B90EFD0018E28C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4A213C619B90EFD0018E28C /* GAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAViewController.h; sourceTree = "<group>"; };
+		D4A213C719B90EFD0018E28C /* GAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAViewController.m; sourceTree = "<group>"; };
+		D4A213C919B90EFD0018E28C /* GAMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAMyScene.h; sourceTree = "<group>"; };
+		D4A213CA19B90EFD0018E28C /* GAMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAMyScene.m; sourceTree = "<group>"; };
+		D4A213CC19B90EFD0018E28C /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		D4A213CE19B90EFD0018E28C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D4A213D419B90EFD0018E28C /* Tappy PlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tappy PlaneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4A213D519B90EFD0018E28C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D4A213DD19B90EFD0018E28C /* Tappy PlaneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tappy PlaneTests-Info.plist"; sourceTree = "<group>"; };
+		D4A213DF19B90EFD0018E28C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4A213E119B90EFD0018E28C /* Tappy_PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tappy_PlaneTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4A213A919B90EFD0018E28C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4A213B219B90EFD0018E28C /* CoreGraphics.framework in Frameworks */,
+				D4A213B419B90EFD0018E28C /* UIKit.framework in Frameworks */,
+				D4A213B619B90EFD0018E28C /* SpriteKit.framework in Frameworks */,
+				D4A213B019B90EFD0018E28C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4A213D119B90EFD0018E28C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4A213D619B90EFD0018E28C /* XCTest.framework in Frameworks */,
+				D4A213D819B90EFD0018E28C /* UIKit.framework in Frameworks */,
+				D4A213D719B90EFD0018E28C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4A213A319B90EFD0018E28C = {
+			isa = PBXGroup;
+			children = (
+				D4A213B719B90EFD0018E28C /* Tappy Plane */,
+				D4A213DB19B90EFD0018E28C /* Tappy PlaneTests */,
+				D4A213AE19B90EFD0018E28C /* Frameworks */,
+				D4A213AD19B90EFD0018E28C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4A213AD19B90EFD0018E28C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4A213AC19B90EFD0018E28C /* Tappy Plane.app */,
+				D4A213D419B90EFD0018E28C /* Tappy PlaneTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4A213AE19B90EFD0018E28C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4A213AF19B90EFD0018E28C /* Foundation.framework */,
+				D4A213B119B90EFD0018E28C /* CoreGraphics.framework */,
+				D4A213B319B90EFD0018E28C /* UIKit.framework */,
+				D4A213B519B90EFD0018E28C /* SpriteKit.framework */,
+				D4A213D519B90EFD0018E28C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4A213B719B90EFD0018E28C /* Tappy Plane */ = {
+			isa = PBXGroup;
+			children = (
+				D4A213C019B90EFD0018E28C /* GAAppDelegate.h */,
+				D4A213C119B90EFD0018E28C /* GAAppDelegate.m */,
+				D4A213C319B90EFD0018E28C /* Main.storyboard */,
+				D4A213C619B90EFD0018E28C /* GAViewController.h */,
+				D4A213C719B90EFD0018E28C /* GAViewController.m */,
+				D4A213C919B90EFD0018E28C /* GAMyScene.h */,
+				D4A213CA19B90EFD0018E28C /* GAMyScene.m */,
+				D4A213CC19B90EFD0018E28C /* Spaceship.png */,
+				D4A213CE19B90EFD0018E28C /* Images.xcassets */,
+				D4A213B819B90EFD0018E28C /* Supporting Files */,
+			);
+			path = "Tappy Plane";
+			sourceTree = "<group>";
+		};
+		D4A213B819B90EFD0018E28C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4A213B919B90EFD0018E28C /* Tappy Plane-Info.plist */,
+				D4A213BA19B90EFD0018E28C /* InfoPlist.strings */,
+				D4A213BD19B90EFD0018E28C /* main.m */,
+				D4A213BF19B90EFD0018E28C /* Tappy Plane-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4A213DB19B90EFD0018E28C /* Tappy PlaneTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4A213E119B90EFD0018E28C /* Tappy_PlaneTests.m */,
+				D4A213DC19B90EFD0018E28C /* Supporting Files */,
+			);
+			path = "Tappy PlaneTests";
+			sourceTree = "<group>";
+		};
+		D4A213DC19B90EFD0018E28C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4A213DD19B90EFD0018E28C /* Tappy PlaneTests-Info.plist */,
+				D4A213DE19B90EFD0018E28C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4A213AB19B90EFD0018E28C /* Tappy Plane */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4A213E519B90EFD0018E28C /* Build configuration list for PBXNativeTarget "Tappy Plane" */;
+			buildPhases = (
+				D4A213A819B90EFD0018E28C /* Sources */,
+				D4A213A919B90EFD0018E28C /* Frameworks */,
+				D4A213AA19B90EFD0018E28C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tappy Plane";
+			productName = "Tappy Plane";
+			productReference = D4A213AC19B90EFD0018E28C /* Tappy Plane.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4A213D319B90EFD0018E28C /* Tappy PlaneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4A213E819B90EFD0018E28C /* Build configuration list for PBXNativeTarget "Tappy PlaneTests" */;
+			buildPhases = (
+				D4A213D019B90EFD0018E28C /* Sources */,
+				D4A213D119B90EFD0018E28C /* Frameworks */,
+				D4A213D219B90EFD0018E28C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4A213DA19B90EFD0018E28C /* PBXTargetDependency */,
+			);
+			name = "Tappy PlaneTests";
+			productName = "Tappy PlaneTests";
+			productReference = D4A213D419B90EFD0018E28C /* Tappy PlaneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4A213A419B90EFD0018E28C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Guajas Apps";
+				TargetAttributes = {
+					D4A213D319B90EFD0018E28C = {
+						TestTargetID = D4A213AB19B90EFD0018E28C;
+					};
+				};
+			};
+			buildConfigurationList = D4A213A719B90EFD0018E28C /* Build configuration list for PBXProject "Tappy Plane" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4A213A319B90EFD0018E28C;
+			productRefGroup = D4A213AD19B90EFD0018E28C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4A213AB19B90EFD0018E28C /* Tappy Plane */,
+				D4A213D319B90EFD0018E28C /* Tappy PlaneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4A213AA19B90EFD0018E28C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4A213BC19B90EFD0018E28C /* InfoPlist.strings in Resources */,
+				D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */,
+				D4A213CD19B90EFD0018E28C /* Spaceship.png in Resources */,
+				D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4A213D219B90EFD0018E28C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4A213E019B90EFD0018E28C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4A213A819B90EFD0018E28C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */,
+				D4A213C819B90EFD0018E28C /* GAViewController.m in Sources */,
+				D4A213CB19B90EFD0018E28C /* GAMyScene.m in Sources */,
+				D4A213BE19B90EFD0018E28C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4A213D019B90EFD0018E28C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4A213E219B90EFD0018E28C /* Tappy_PlaneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4A213DA19B90EFD0018E28C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4A213AB19B90EFD0018E28C /* Tappy Plane */;
+			targetProxy = D4A213D919B90EFD0018E28C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4A213BA19B90EFD0018E28C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4A213BB19B90EFD0018E28C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D4A213C319B90EFD0018E28C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4A213C419B90EFD0018E28C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D4A213DE19B90EFD0018E28C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4A213DF19B90EFD0018E28C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4A213E319B90EFD0018E28C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D4A213E419B90EFD0018E28C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4A213E619B90EFD0018E28C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tappy Plane/Tappy Plane-Prefix.pch";
+				INFOPLIST_FILE = "Tappy Plane/Tappy Plane-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D4A213E719B90EFD0018E28C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tappy Plane/Tappy Plane-Prefix.pch";
+				INFOPLIST_FILE = "Tappy Plane/Tappy Plane-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D4A213E919B90EFD0018E28C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tappy Plane.app/Tappy Plane";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tappy Plane/Tappy Plane-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tappy PlaneTests/Tappy PlaneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D4A213EA19B90EFD0018E28C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tappy Plane.app/Tappy Plane";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tappy Plane/Tappy Plane-Prefix.pch";
+				INFOPLIST_FILE = "Tappy PlaneTests/Tappy PlaneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4A213A719B90EFD0018E28C /* Build configuration list for PBXProject "Tappy Plane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4A213E319B90EFD0018E28C /* Debug */,
+				D4A213E419B90EFD0018E28C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4A213E519B90EFD0018E28C /* Build configuration list for PBXNativeTarget "Tappy Plane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4A213E619B90EFD0018E28C /* Debug */,
+				D4A213E719B90EFD0018E28C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D4A213E819B90EFD0018E28C /* Build configuration list for PBXNativeTarget "Tappy PlaneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4A213E919B90EFD0018E28C /* Debug */,
+				D4A213EA19B90EFD0018E28C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4A213A419B90EFD0018E28C /* Project object */;
+}

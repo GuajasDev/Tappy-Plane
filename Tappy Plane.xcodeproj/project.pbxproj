@@ -16,14 +16,15 @@
 		D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213C119B90EFD0018E28C /* GAAppDelegate.m */; };
 		D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A213C319B90EFD0018E28C /* Main.storyboard */; };
 		D4A213C819B90EFD0018E28C /* GAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213C719B90EFD0018E28C /* GAViewController.m */; };
-		D4A213CB19B90EFD0018E28C /* GAMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213CA19B90EFD0018E28C /* GAMyScene.m */; };
-		D4A213CD19B90EFD0018E28C /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A213CC19B90EFD0018E28C /* Spaceship.png */; };
 		D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A213CE19B90EFD0018E28C /* Images.xcassets */; };
 		D4A213D619B90EFD0018E28C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213D519B90EFD0018E28C /* XCTest.framework */; };
 		D4A213D719B90EFD0018E28C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213AF19B90EFD0018E28C /* Foundation.framework */; };
 		D4A213D819B90EFD0018E28C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213B319B90EFD0018E28C /* UIKit.framework */; };
 		D4A213E019B90EFD0018E28C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4A213DE19B90EFD0018E28C /* InfoPlist.strings */; };
 		D4A213E219B90EFD0018E28C /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213E119B90EFD0018E28C /* Tappy_PlaneTests.m */; };
+		D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213EC19B90F610018E28C /* GAGameScene.m */; };
+		D4AA536819BA615D00C7DBCE /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D4AA536719BA615D00C7DBCE /* Planes.atlas */; };
+		D4AA536B19BA628500C7DBCE /* GAPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AA536A19BA628500C7DBCE /* GAPlane.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +52,17 @@
 		D4A213C419B90EFD0018E28C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4A213C619B90EFD0018E28C /* GAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAViewController.h; sourceTree = "<group>"; };
 		D4A213C719B90EFD0018E28C /* GAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAViewController.m; sourceTree = "<group>"; };
-		D4A213C919B90EFD0018E28C /* GAMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAMyScene.h; sourceTree = "<group>"; };
-		D4A213CA19B90EFD0018E28C /* GAMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAMyScene.m; sourceTree = "<group>"; };
-		D4A213CC19B90EFD0018E28C /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		D4A213CE19B90EFD0018E28C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D4A213D419B90EFD0018E28C /* Tappy PlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tappy PlaneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A213D519B90EFD0018E28C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D4A213DD19B90EFD0018E28C /* Tappy PlaneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tappy PlaneTests-Info.plist"; sourceTree = "<group>"; };
 		D4A213DF19B90EFD0018E28C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4A213E119B90EFD0018E28C /* Tappy_PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tappy_PlaneTests.m; sourceTree = "<group>"; };
+		D4A213EB19B90F610018E28C /* GAGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAGameScene.h; sourceTree = "<group>"; };
+		D4A213EC19B90F610018E28C /* GAGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAGameScene.m; sourceTree = "<group>"; };
+		D4AA536719BA615D00C7DBCE /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
+		D4AA536919BA628500C7DBCE /* GAPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPlane.h; sourceTree = "<group>"; };
+		D4AA536A19BA628500C7DBCE /* GAPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPlane.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +129,10 @@
 				D4A213C319B90EFD0018E28C /* Main.storyboard */,
 				D4A213C619B90EFD0018E28C /* GAViewController.h */,
 				D4A213C719B90EFD0018E28C /* GAViewController.m */,
-				D4A213C919B90EFD0018E28C /* GAMyScene.h */,
-				D4A213CA19B90EFD0018E28C /* GAMyScene.m */,
-				D4A213CC19B90EFD0018E28C /* Spaceship.png */,
+				D4A213EB19B90F610018E28C /* GAGameScene.h */,
+				D4A213EC19B90F610018E28C /* GAGameScene.m */,
+				D4AA536919BA628500C7DBCE /* GAPlane.h */,
+				D4AA536A19BA628500C7DBCE /* GAPlane.m */,
 				D4A213CE19B90EFD0018E28C /* Images.xcassets */,
 				D4A213B819B90EFD0018E28C /* Supporting Files */,
 			);
@@ -138,6 +142,7 @@
 		D4A213B819B90EFD0018E28C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4AA536719BA615D00C7DBCE /* Planes.atlas */,
 				D4A213B919B90EFD0018E28C /* Tappy Plane-Info.plist */,
 				D4A213BA19B90EFD0018E28C /* InfoPlist.strings */,
 				D4A213BD19B90EFD0018E28C /* main.m */,
@@ -243,7 +248,7 @@
 			files = (
 				D4A213BC19B90EFD0018E28C /* InfoPlist.strings in Resources */,
 				D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */,
-				D4A213CD19B90EFD0018E28C /* Spaceship.png in Resources */,
+				D4AA536819BA615D00C7DBCE /* Planes.atlas in Resources */,
 				D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4AA536B19BA628500C7DBCE /* GAPlane.m in Sources */,
 				D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */,
+				D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */,
 				D4A213C819B90EFD0018E28C /* GAViewController.m in Sources */,
-				D4A213CB19B90EFD0018E28C /* GAMyScene.m in Sources */,
 				D4A213BE19B90EFD0018E28C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +479,7 @@
 				D4A213E719B90EFD0018E28C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4A213E819B90EFD0018E28C /* Build configuration list for PBXNativeTarget "Tappy PlaneTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +488,7 @@
 				D4A213EA19B90EFD0018E28C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

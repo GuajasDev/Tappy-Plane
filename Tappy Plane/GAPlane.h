@@ -10,4 +10,8 @@
 
 @interface GAPlane : SKSpriteNode
 
+@property (nonatomic) BOOL engineRunning;
+
+-(void)setRandomColor;
+
 @end

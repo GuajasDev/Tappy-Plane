@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4627A3119CFD4FA00AAFD72 /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4627A3019CFD4FA00AAFD72 /* PlaneAnimations.plist */; };
 		D4A213B019B90EFD0018E28C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213AF19B90EFD0018E28C /* Foundation.framework */; };
 		D4A213B219B90EFD0018E28C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213B119B90EFD0018E28C /* CoreGraphics.framework */; };
 		D4A213B419B90EFD0018E28C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A213B319B90EFD0018E28C /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4627A3019CFD4FA00AAFD72 /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
 		D4A213AC19B90EFD0018E28C /* Tappy Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tappy Plane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A213AF19B90EFD0018E28C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4A213B119B90EFD0018E28C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4627A3219CFD68700AAFD72 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4627A3019CFD4FA00AAFD72 /* PlaneAnimations.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		D4A213A319B90EFD0018E28C = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,7 @@
 				D4AA536919BA628500C7DBCE /* GAPlane.h */,
 				D4AA536A19BA628500C7DBCE /* GAPlane.m */,
 				D4A213CE19B90EFD0018E28C /* Images.xcassets */,
+				D4627A3219CFD68700AAFD72 /* Resources */,
 				D4A213B819B90EFD0018E28C /* Supporting Files */,
 			);
 			path = "Tappy Plane";
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A213BC19B90EFD0018E28C /* InfoPlist.strings in Resources */,
+				D4627A3119CFD4FA00AAFD72 /* PlaneAnimations.plist in Resources */,
 				D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */,
 				D4AA536819BA615D00C7DBCE /* Planes.atlas in Resources */,
 				D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */,

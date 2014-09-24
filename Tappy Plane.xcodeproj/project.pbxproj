@@ -24,8 +24,13 @@
 		D4A213E019B90EFD0018E28C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4A213DE19B90EFD0018E28C /* InfoPlist.strings */; };
 		D4A213E219B90EFD0018E28C /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213E119B90EFD0018E28C /* Tappy_PlaneTests.m */; };
 		D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213EC19B90F610018E28C /* GAGameScene.m */; };
-		D4AA536819BA615D00C7DBCE /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D4AA536719BA615D00C7DBCE /* Planes.atlas */; };
+		D4AA536819BA615D00C7DBCE /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D4AA536719BA615D00C7DBCE /* Graphics.atlas */; };
 		D4AA536B19BA628500C7DBCE /* GAPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AA536A19BA628500C7DBCE /* GAPlane.m */; };
+		D4EC4C4419D11FE80024C589 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4EC4C4219D11FE80024C589 /* PlanePuffTrail.sks */; };
+		D4EC4C4819D1282A0024C589 /* GAScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */; };
+		D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */; };
+		D4EC4C8A19D19C6A0024C589 /* GAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C8919D19C6A0024C589 /* GAConstants.m */; };
+		D4EC4C8D19D27CFC0024C589 /* GAObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C8C19D27CFC0024C589 /* GAObstacleLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,9 +67,18 @@
 		D4A213E119B90EFD0018E28C /* Tappy_PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tappy_PlaneTests.m; sourceTree = "<group>"; };
 		D4A213EB19B90F610018E28C /* GAGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAGameScene.h; sourceTree = "<group>"; };
 		D4A213EC19B90F610018E28C /* GAGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAGameScene.m; sourceTree = "<group>"; };
-		D4AA536719BA615D00C7DBCE /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
+		D4AA536719BA615D00C7DBCE /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		D4AA536919BA628500C7DBCE /* GAPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPlane.h; sourceTree = "<group>"; };
 		D4AA536A19BA628500C7DBCE /* GAPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPlane.m; sourceTree = "<group>"; };
+		D4EC4C4219D11FE80024C589 /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
+		D4EC4C4619D1282A0024C589 /* GAScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAScrollingNode.h; sourceTree = "<group>"; };
+		D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAScrollingNode.m; sourceTree = "<group>"; };
+		D4EC4C4919D129F60024C589 /* GAScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAScrollingLayer.h; sourceTree = "<group>"; };
+		D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAScrollingLayer.m; sourceTree = "<group>"; };
+		D4EC4C8819D19C6A0024C589 /* GAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAConstants.h; sourceTree = "<group>"; };
+		D4EC4C8919D19C6A0024C589 /* GAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConstants.m; sourceTree = "<group>"; };
+		D4EC4C8B19D27CFC0024C589 /* GAObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAObstacleLayer.h; sourceTree = "<group>"; };
+		D4EC4C8C19D27CFC0024C589 /* GAObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAObstacleLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +112,14 @@
 				D4627A3019CFD4FA00AAFD72 /* PlaneAnimations.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		D4627AAB19CFF9F700AAFD72 /* Particle Effects */ = {
+			isa = PBXGroup;
+			children = (
+				D4EC4C4219D11FE80024C589 /* PlanePuffTrail.sks */,
+			);
+			name = "Particle Effects";
 			sourceTree = "<group>";
 		};
 		D4A213A319B90EFD0018E28C = {
@@ -137,13 +159,22 @@
 				D4A213C019B90EFD0018E28C /* GAAppDelegate.h */,
 				D4A213C119B90EFD0018E28C /* GAAppDelegate.m */,
 				D4A213C319B90EFD0018E28C /* Main.storyboard */,
+				D4EC4C8819D19C6A0024C589 /* GAConstants.h */,
+				D4EC4C8919D19C6A0024C589 /* GAConstants.m */,
 				D4A213C619B90EFD0018E28C /* GAViewController.h */,
 				D4A213C719B90EFD0018E28C /* GAViewController.m */,
 				D4A213EB19B90F610018E28C /* GAGameScene.h */,
 				D4A213EC19B90F610018E28C /* GAGameScene.m */,
 				D4AA536919BA628500C7DBCE /* GAPlane.h */,
 				D4AA536A19BA628500C7DBCE /* GAPlane.m */,
+				D4EC4C4919D129F60024C589 /* GAScrollingLayer.h */,
+				D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */,
+				D4EC4C8B19D27CFC0024C589 /* GAObstacleLayer.h */,
+				D4EC4C8C19D27CFC0024C589 /* GAObstacleLayer.m */,
+				D4EC4C4619D1282A0024C589 /* GAScrollingNode.h */,
+				D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */,
 				D4A213CE19B90EFD0018E28C /* Images.xcassets */,
+				D4627AAB19CFF9F700AAFD72 /* Particle Effects */,
 				D4627A3219CFD68700AAFD72 /* Resources */,
 				D4A213B819B90EFD0018E28C /* Supporting Files */,
 			);
@@ -153,7 +184,7 @@
 		D4A213B819B90EFD0018E28C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4AA536719BA615D00C7DBCE /* Planes.atlas */,
+				D4AA536719BA615D00C7DBCE /* Graphics.atlas */,
 				D4A213B919B90EFD0018E28C /* Tappy Plane-Info.plist */,
 				D4A213BA19B90EFD0018E28C /* InfoPlist.strings */,
 				D4A213BD19B90EFD0018E28C /* main.m */,
@@ -259,8 +290,9 @@
 			files = (
 				D4A213BC19B90EFD0018E28C /* InfoPlist.strings in Resources */,
 				D4627A3119CFD4FA00AAFD72 /* PlaneAnimations.plist in Resources */,
+				D4EC4C4419D11FE80024C589 /* PlanePuffTrail.sks in Resources */,
 				D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */,
-				D4AA536819BA615D00C7DBCE /* Planes.atlas in Resources */,
+				D4AA536819BA615D00C7DBCE /* Graphics.atlas in Resources */,
 				D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,9 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4EC4C8D19D27CFC0024C589 /* GAObstacleLayer.m in Sources */,
 				D4AA536B19BA628500C7DBCE /* GAPlane.m in Sources */,
+				D4EC4C4819D1282A0024C589 /* GAScrollingNode.m in Sources */,
 				D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */,
+				D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */,
 				D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */,
+				D4EC4C8A19D19C6A0024C589 /* GAConstants.m in Sources */,
 				D4A213C819B90EFD0018E28C /* GAViewController.m in Sources */,
 				D4A213BE19B90EFD0018E28C /* main.m in Sources */,
 			);

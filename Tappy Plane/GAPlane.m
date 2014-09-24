@@ -17,7 +17,8 @@
 
 @end
 
-static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";  //Plane animation key, change the name and it will change all throughout the code
+static NSString* const kGAKeyPlaneAnimation = @"PlaneAnimation";  //Plane animation key, change the name and it will change all throughout the code
+static const CGFloat kGAMaxAltitude = 300.0;
 
 @implementation GAPlane
 
@@ -115,10 +116,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";  //Plane animatio
     
     if (engineRunning) {
         self.puffTrailEmitter.targetNode = self.parent; //Makes the emitter act on the planes parent so it doesnt go up and down with it
-        [self actionForKey:kKeyPlaneAnimation].speed = 1;
+        [self actionForKey:kGAKeyPlaneAnimation].speed = 1;
         self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     } else {
-        [self actionForKey:kKeyPlaneAnimation].speed = 0;
+        [self actionForKey:kGAKeyPlaneAnimation].speed = 0;
         self.puffTrailEmitter.particleBirthRate = 0;
     }
     
@@ -141,11 +142,11 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";  //Plane animatio
 }
 
 -(void)setRandomColor {
-    [self removeActionForKey:kKeyPlaneAnimation];
+    [self removeActionForKey:kGAKeyPlaneAnimation];
     SKAction *animation = [self.planeAnimations objectAtIndex:arc4random_uniform((int)self.planeAnimations.count)];
-    [self runAction:animation withKey:kKeyPlaneAnimation];
+    [self runAction:animation withKey:kGAKeyPlaneAnimation];
     if (!self.engineRunning) {
-        [self actionForKey:kKeyPlaneAnimation].speed = 0;
+        [self actionForKey:kGAKeyPlaneAnimation].speed = 0;
     }
 }
 
@@ -187,7 +188,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";  //Plane animatio
 
 -(void)update {
     
-    if (self.accelerating) {
+    if (self.accelerating && self.position.y < kGAMaxAltitude) {
         [self.physicsBody applyForce:CGVectorMake(0.0, 100.0)];
     }
     

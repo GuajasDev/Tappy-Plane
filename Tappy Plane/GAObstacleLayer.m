@@ -8,6 +8,7 @@
 
 #import "GAObstacleLayer.h"
 #import "GAConstants.h"
+#import "GATilesetTextureProvider.h"
 
 @interface GAObstacleLayer ()
 
@@ -18,9 +19,13 @@
 static const CGFloat kGAMarkerBuffer = 200.0;
 static const CGFloat kGAVerticalGap = 90.0;
 static const CGFloat kGASpaceBetweenObstacleSets = 180.0;
+static const CGFloat kGACollectableClearance = 50.0;
+
+static const int kGACollectableVerticalRange = 200;
 
 static NSString *const kGAKeyMountainUp = @"MountainUp";
 static NSString *const kGAKeyMountainDown = @"MountainDown";
+static NSString *const kGAKeyCollectableStar = @"CollectableStar";
 
 @implementation GAObstacleLayer
 
@@ -39,9 +44,15 @@ static NSString *const kGAKeyMountainDown = @"MountainDown";
 
 -(void)reset {
     
-    //Loop through child nodes and reposition for reuse
+    //Loop through child nodes and reposition for reuse AND update texture
     for (SKNode *node in self.children) {
         node.position = CGPointMake( - 1000, 0);
+        if (node.name == kGAKeyMountainUp) {
+            ((SKSpriteNode*)node).texture = [[GATilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"];
+        }
+        if (node.name == kGAKeyMountainDown) {
+            ((SKSpriteNode*)node).texture = [[GATilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"];
+        }
     }
     
     //Reposition marker
@@ -69,7 +80,7 @@ static NSString *const kGAKeyMountainDown = @"MountainDown";
     
 }
 
--(void) addObstacleSet {
+-(void)addObstacleSet {
     
     //Get mountain nodes
     SKSpriteNode *mountainUp = [self getUnusedObjectForKey:kGAKeyMountainUp];
@@ -83,6 +94,18 @@ static NSString *const kGAKeyMountainDown = @"MountainDown";
     //Positions mountainUp at the bottom of the screen and mountainDown at kGAVerticalGap points from mountainUp's top
     mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5) - yAdjustment);
     mountainDown.position = CGPointMake(self.marker, mountainUp.position.y + mountainDown.size.height + kGAVerticalGap);
+    
+    //Get collectable star node
+    SKSpriteNode *collectable = [self getUnusedObjectForKey:kGAKeyCollectableStar];
+    
+    //Position collectable
+    CGFloat midPoint = mountainUp.position.y + (mountainUp.size.height * 0.5) + (kGAVerticalGap * 0.5);
+    CGFloat yPosition = midPoint + arc4random_uniform(kGACollectableVerticalRange) - (kGACollectableVerticalRange * 0.5);
+    
+    yPosition = fmaxf(yPosition, self.floor + kGACollectableClearance);
+    yPosition = fminf(yPosition, self.ceiling - kGACollectableClearance);
+    
+    collectable.position = CGPointMake(self.marker + (kGASpaceBetweenObstacleSets * 0.5), yPosition);
     
     //Reposition marker
     self.marker +=kGASpaceBetweenObstacleSets;
@@ -122,9 +145,7 @@ static NSString *const kGAKeyMountainDown = @"MountainDown";
     if (key == kGAKeyMountainUp) {
         
         //Setup Physics body with path
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
-        
-        NSLog(@"Create Mountain Up");
+        object = [SKSpriteNode spriteNodeWithTexture:[[GATilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
         
         //---------- Obtained from dazchong.com/spritekit/ ----------
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
@@ -146,9 +167,7 @@ static NSString *const kGAKeyMountainDown = @"MountainDown";
     } else if (key == kGAKeyMountainDown) {
         
         //Setup Physics body with path
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
-        
-        NSLog(@"Create Mountain Down");
+        object = [SKSpriteNode spriteNodeWithTexture:[[GATilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
         
         //---------- Obtained from dazchong.com/spritekit/ ----------
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
@@ -164,6 +183,17 @@ static NSString *const kGAKeyMountainDown = @"MountainDown";
         object.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
         //----------------------------------------------------------
         object.physicsBody.categoryBitMask = kGACategoryGround;
+        
+        [self addChild:object];
+        
+    } else if (key == kGAKeyCollectableStar) {
+        
+        object = [GACollectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+        ((GACollectable*)object).pointValue = 1;
+        ((GACollectable*)object).delegate = self.collectableDelegate;   //collectableDelegate is defined in GameScene as 'self', so it is the scene. Therefore we are saying that the collectable star's delegate is the scene
+        object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
+        object.physicsBody.categoryBitMask = kGACategoryCollectable;
+        object.physicsBody.dynamic = NO;    //Not affected by any physics, except contact
         
         [self addChild:object];
         

@@ -12,5 +12,6 @@
 
 extern const uint32_t kGACategoryPlane;
 extern const uint32_t kGACategoryGround;
+extern const uint32_t kGACategoryCollectable;
 
 @end

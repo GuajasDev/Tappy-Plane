@@ -11,6 +11,8 @@
 #import "GAScrollingLayer.h"
 #import "GAConstants.h"
 #import "GAObstacleLayer.h"
+#import "GABitmapFontLabel.h"
+#import "GATilesetTextureProvider.h"
 
 @interface GAGameScene ()   //Created so we can add propertie to the GAGameScene
 
@@ -18,8 +20,11 @@
 @property (nonatomic) GAScrollingLayer *background;
 @property (nonatomic) GAScrollingLayer *foreground;
 @property (nonatomic) GAObstacleLayer *obstacles;
+@property (nonatomic) GABitmapFontLabel *scoreLabel;
 
 @property (nonatomic) SKNode *world;
+
+@property (nonatomic) NSInteger score;
 
 @end
 
@@ -58,6 +63,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
         
         //Setup obstacle layer
         _obstacles = [[GAObstacleLayer alloc] init];
+        _obstacles.collectableDelegate = self;
         _obstacles.horizontalScrollSpeed = - 80.0;
         _obstacles.scrolling = YES;
         _obstacles.floor = 0.0;
@@ -74,9 +80,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
         
         //Setup Player
         _player = [[GAPlane alloc] init];
-        _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
+        
+        //Setup score label
+        _scoreLabel = [[GABitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
+        _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100.0);
+        [self addChild:_scoreLabel];
         
         //Start a new game
         [self newGame];
@@ -129,43 +139,61 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
 }
 
 -(void)newGame {
+    //Randomise tileset
+    [[GATilesetTextureProvider getProvider] randomiseTileset];
+    
     //Reset layers
     self.foreground.position = CGPointZero;
+    for (SKSpriteNode *node in self.foreground.children) {
+        node.texture = [[GATilesetTextureProvider getProvider] getTextureForKey:@"ground"];
+    }
     [self.foreground layoutTiles];
     self.obstacles.position = CGPointZero;
     [self.obstacles reset];
     self.obstacles.scrolling = NO;
-    self.background.position = CGPointMake(0.0, 30);
+    self.background.position = CGPointZero;
     [self.background layoutTiles];
     
+    //Reset score
+    self.score = 0;
+    
     //Reset plane
-    self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+    self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
     self.player.physicsBody.affectedByGravity = NO;
     [self.player reset];
     
 }
 
+-(void)wasCollected:(GACollectable *)collectable {
+    
+    self.score += collectable.pointValue;
+
+}
+
+-(void)setScore:(NSInteger)score {
+    
+    _score = score;
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
+    
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    for (UITouch *touch in touches) {
-        if (self.player.crashed) {
-            //Reset the game
-            [self newGame];
-        } else {
-            //Have not crashed, so accelerate
-            self.player.accelerating = YES;
-            self.player.physicsBody.affectedByGravity = YES;
-            self.obstacles.scrolling = YES;
-        }
+    if (self.player.crashed) {
+        //Reset the game
+        [self newGame];
+    } else {
+        //Have not crashed, so accelerate
+        self.player.accelerating = YES;
+        self.player.physicsBody.affectedByGravity = YES;
+        self.obstacles.scrolling = YES;
     }
     
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    for (UITouch *touch in touches) {
-        self.player.accelerating = NO;
-    }
+    self.player.accelerating = NO;
     
 }
 

@@ -8,6 +8,7 @@
 
 #import "GAPlane.h"
 #import "GAConstants.h"
+#import "GACollectable.h"
 
 @interface GAPlane()
 
@@ -53,7 +54,8 @@ static const CGFloat kGAMaxAltitude = 300.0;
         //-----------------------------------------------------------
         self.physicsBody.mass = 0.08;
         self.physicsBody.categoryBitMask = kGACategoryPlane;
-        self.physicsBody.contactTestBitMask = kGACategoryGround;
+        self.physicsBody.contactTestBitMask = kGACategoryGround | kGACategoryCollectable;
+        self.physicsBody.collisionBitMask = kGACategoryGround;  //The plane will collide with the ground but not the collectables
         
         //---------- How to vizualise the edge path ----------
         /*SKShapeNode *bodyShape = [SKShapeNode node];
@@ -143,7 +145,7 @@ static const CGFloat kGAMaxAltitude = 300.0;
 
 -(void)setRandomColor {
     [self removeActionForKey:kGAKeyPlaneAnimation];
-    SKAction *animation = [self.planeAnimations objectAtIndex:arc4random_uniform((int)self.planeAnimations.count)];
+    SKAction *animation = [self.planeAnimations objectAtIndex:arc4random_uniform((uint)self.planeAnimations.count)];
     [self runAction:animation withKey:kGAKeyPlaneAnimation];
     if (!self.engineRunning) {
         [self actionForKey:kGAKeyPlaneAnimation].speed = 0;
@@ -154,10 +156,19 @@ static const CGFloat kGAMaxAltitude = 300.0;
     
     //Ignore more collisions if we already crashed
     if (!self.crashed) {
+        
         if (body.categoryBitMask == kGACategoryGround) {
             //We hit the ground
             self.crashed = YES;
         }
+        
+        if (body.categoryBitMask == kGACategoryCollectable) {
+            //We got a collectable
+            if ([body.node respondsToSelector:@selector(collect)]) {
+                [body.node performSelector:@selector(collect)];
+            }
+        }
+        
     }
     
 }

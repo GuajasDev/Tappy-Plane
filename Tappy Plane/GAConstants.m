@@ -10,7 +10,8 @@
 
 @implementation GAConstants
 
-const uint32_t kGACategoryPlane     = 0x1 << 0;
-const uint32_t kGACategoryGround    = 0x1 << 1;
+const uint32_t kGACategoryPlane         = 0x1 << 0;
+const uint32_t kGACategoryGround        = 0x1 << 1;
+const uint32_t kGACategoryCollectable   = 0x1 << 2;
 
 @end

@@ -7,8 +7,12 @@
 //
 
 #import "GAScrollingNode.h"
+#import "GACollectable.h"
 
 @interface GAObstacleLayer : GAScrollingNode
+
+//See GACollectible for explanation on what's below
+@property (nonatomic, weak) id<GACollectableDelegate> collectableDelegate;
 
 @property (nonatomic) CGFloat floor;
 @property (nonatomic) CGFloat ceiling;

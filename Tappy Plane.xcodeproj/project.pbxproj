@@ -31,6 +31,10 @@
 		D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */; };
 		D4EC4C8A19D19C6A0024C589 /* GAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C8919D19C6A0024C589 /* GAConstants.m */; };
 		D4EC4C8D19D27CFC0024C589 /* GAObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C8C19D27CFC0024C589 /* GAObstacleLayer.m */; };
+		D4EC4C9419D612DE0024C589 /* GACollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C9319D612DE0024C589 /* GACollectable.m */; };
+		D4EC4C9719D624610024C589 /* GABitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C9619D624610024C589 /* GABitmapFontLabel.m */; };
+		D4EC4C9919D7779E0024C589 /* TileSetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4EC4C9819D7779E0024C589 /* TileSetGraphics.plist */; };
+		D4EC4C9C19D779A30024C589 /* GATilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C9B19D779A30024C589 /* GATilesetTextureProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,13 @@
 		D4EC4C8919D19C6A0024C589 /* GAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAConstants.m; sourceTree = "<group>"; };
 		D4EC4C8B19D27CFC0024C589 /* GAObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAObstacleLayer.h; sourceTree = "<group>"; };
 		D4EC4C8C19D27CFC0024C589 /* GAObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAObstacleLayer.m; sourceTree = "<group>"; };
+		D4EC4C9219D612DE0024C589 /* GACollectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GACollectable.h; sourceTree = "<group>"; };
+		D4EC4C9319D612DE0024C589 /* GACollectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GACollectable.m; sourceTree = "<group>"; };
+		D4EC4C9519D624610024C589 /* GABitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GABitmapFontLabel.h; sourceTree = "<group>"; };
+		D4EC4C9619D624610024C589 /* GABitmapFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GABitmapFontLabel.m; sourceTree = "<group>"; };
+		D4EC4C9819D7779E0024C589 /* TileSetGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TileSetGraphics.plist; sourceTree = "<group>"; };
+		D4EC4C9A19D779A30024C589 /* GATilesetTextureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GATilesetTextureProvider.h; sourceTree = "<group>"; };
+		D4EC4C9B19D779A30024C589 /* GATilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GATilesetTextureProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D4627A3019CFD4FA00AAFD72 /* PlaneAnimations.plist */,
+				D4EC4C9819D7779E0024C589 /* TileSetGraphics.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -161,18 +173,24 @@
 				D4A213C319B90EFD0018E28C /* Main.storyboard */,
 				D4EC4C8819D19C6A0024C589 /* GAConstants.h */,
 				D4EC4C8919D19C6A0024C589 /* GAConstants.m */,
+				D4EC4C9A19D779A30024C589 /* GATilesetTextureProvider.h */,
+				D4EC4C9B19D779A30024C589 /* GATilesetTextureProvider.m */,
 				D4A213C619B90EFD0018E28C /* GAViewController.h */,
 				D4A213C719B90EFD0018E28C /* GAViewController.m */,
 				D4A213EB19B90F610018E28C /* GAGameScene.h */,
 				D4A213EC19B90F610018E28C /* GAGameScene.m */,
 				D4AA536919BA628500C7DBCE /* GAPlane.h */,
 				D4AA536A19BA628500C7DBCE /* GAPlane.m */,
+				D4EC4C9219D612DE0024C589 /* GACollectable.h */,
+				D4EC4C9319D612DE0024C589 /* GACollectable.m */,
 				D4EC4C4919D129F60024C589 /* GAScrollingLayer.h */,
 				D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */,
 				D4EC4C8B19D27CFC0024C589 /* GAObstacleLayer.h */,
 				D4EC4C8C19D27CFC0024C589 /* GAObstacleLayer.m */,
 				D4EC4C4619D1282A0024C589 /* GAScrollingNode.h */,
 				D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */,
+				D4EC4C9519D624610024C589 /* GABitmapFontLabel.h */,
+				D4EC4C9619D624610024C589 /* GABitmapFontLabel.m */,
 				D4A213CE19B90EFD0018E28C /* Images.xcassets */,
 				D4627AAB19CFF9F700AAFD72 /* Particle Effects */,
 				D4627A3219CFD68700AAFD72 /* Resources */,
@@ -293,6 +311,7 @@
 				D4EC4C4419D11FE80024C589 /* PlanePuffTrail.sks in Resources */,
 				D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */,
 				D4AA536819BA615D00C7DBCE /* Graphics.atlas in Resources */,
+				D4EC4C9919D7779E0024C589 /* TileSetGraphics.plist in Resources */,
 				D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,9 +336,12 @@
 				D4EC4C4819D1282A0024C589 /* GAScrollingNode.m in Sources */,
 				D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */,
 				D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */,
+				D4EC4C9719D624610024C589 /* GABitmapFontLabel.m in Sources */,
 				D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */,
+				D4EC4C9C19D779A30024C589 /* GATilesetTextureProvider.m in Sources */,
 				D4EC4C8A19D19C6A0024C589 /* GAConstants.m in Sources */,
 				D4A213C819B90EFD0018E28C /* GAViewController.m in Sources */,
+				D4EC4C9419D612DE0024C589 /* GACollectable.m in Sources */,
 				D4A213BE19B90EFD0018E28C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

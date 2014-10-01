@@ -14,21 +14,32 @@
 #import "GABitmapFontLabel.h"
 #import "GATilesetTextureProvider.h"
 
-@interface GAGameScene ()   //Created so we can add propertie to the GAGameScene
+typedef enum : NSUInteger {
+    GameReady,
+    GameRunning,
+    GameOver,
+} GameState;
+
+@interface GAGameScene ()   //Created so we can add properties to the GAGameScene
 
 @property (nonatomic) GAPlane *player;
 @property (nonatomic) GAScrollingLayer *background;
 @property (nonatomic) GAScrollingLayer *foreground;
 @property (nonatomic) GAObstacleLayer *obstacles;
 @property (nonatomic) GABitmapFontLabel *scoreLabel;
+@property (nonatomic) GAGameOverMenu *gameOverMenu;
 
 @property (nonatomic) SKNode *world;
 
 @property (nonatomic) NSInteger score;
+@property (nonatomic) NSInteger bestScore;
+
+@property (nonatomic) GameState gameState;
 
 @end
 
 static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop bellow 10 frames per second. Check update method
+static NSString *const kGAKeyBestScore = @"BestScore";
 
 @implementation GAGameScene
 
@@ -86,7 +97,15 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
         //Setup score label
         _scoreLabel = [[GABitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
         _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100.0);
+        _scoreLabel.allignment = BitmapFontAllignmentCenter;
         [self addChild:_scoreLabel];
+        
+        //Loading up the best score
+        self.bestScore = [[NSUserDefaults standardUserDefaults] integerForKey:kGAKeyBestScore]; //Default is 0
+        
+        //Setup game over menu. It is added as a child to the scene in the Update method
+        _gameOverMenu = [[GAGameOverMenu alloc] initWithSize:size];
+        _gameOverMenu.delegate = self;
         
         //Start a new game
         [self newGame];
@@ -138,6 +157,26 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
     
 }
 
+-(void)pressedStartNewGameButton {
+    
+    SKSpriteNode *blackRectangle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:self.size];
+    blackRectangle.anchorPoint = CGPointZero;
+    blackRectangle.alpha = 0;
+    [self addChild:blackRectangle];
+    
+    SKAction *startNewGame = [SKAction runBlock:^{
+        [self newGame];
+        [self.gameOverMenu removeFromParent];
+    }];
+    
+    SKAction *fadeTransition = [SKAction sequence:@[[SKAction fadeInWithDuration:0.4],
+                                                    startNewGame,
+                                                    [SKAction fadeOutWithDuration:0.6],
+                                                    [SKAction removeFromParent]]];
+    [blackRectangle runAction:fadeTransition];
+    
+}
+
 -(void)newGame {
     //Randomise tileset
     [[GATilesetTextureProvider getProvider] randomiseTileset];
@@ -156,11 +195,41 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
     
     //Reset score
     self.score = 0;
+    self.scoreLabel.alpha = 1.0;
     
     //Reset plane
     self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
     self.player.physicsBody.affectedByGravity = NO;
     [self.player reset];
+    
+    //Set game ready state
+    self.gameState = GameReady;
+    
+}
+
+-(void)gameOver {
+    
+    //Update game state
+    self.gameState = GameOver;
+    
+    //Fade out score display
+    [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+    
+    //Set properties on game menu
+    self.gameOverMenu.score = self.score;
+    self.gameOverMenu.medal = [self getMedalForCurrentScore];
+    
+    //Uopdate best score
+    if (self.score > self.bestScore) {
+        self.bestScore = self.score;
+        [[NSUserDefaults standardUserDefaults] setInteger:self.bestScore forKey:kGAKeyBestScore];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    self.gameOverMenu.bestScore = self.bestScore;
+    
+    //Show game over menu
+    [self addChild:self.gameOverMenu];
+    [self.gameOverMenu show];
     
 }
 
@@ -179,21 +248,24 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    if (self.player.crashed) {
-        //Reset the game
-        [self newGame];
-    } else {
-        //Have not crashed, so accelerate
-        self.player.accelerating = YES;
+    if (self.gameState == GameReady) {
         self.player.physicsBody.affectedByGravity = YES;
         self.obstacles.scrolling = YES;
+        self.gameState = GameRunning;
+    }
+    
+    //Note that it is not an 'else if'. If it was, we wouldnt accelerate until a second touch event
+    if (self.gameState == GameRunning) {
+        self.player.accelerating = YES;
     }
     
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    self.player.accelerating = NO;
+    if (self.gameState == GameRunning) {
+        self.player.accelerating = NO;
+    }
     
 }
 
@@ -208,6 +280,14 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
     
 }
 
+-(void)bump {
+    
+    SKAction *bump = [SKAction sequence:@[[SKAction moveBy:CGVectorMake( - 5,  - 4) duration:0.1],
+                                          [SKAction moveTo:CGPointZero duration:0.1]]];
+    [self.world runAction:[SKAction sequence:@[bump, bump]]];
+    
+}
+
 -(void)update:(NSTimeInterval)currentTime {
     
     static NSTimeInterval lastCallTime;
@@ -218,11 +298,35 @@ static const CGFloat kMinFPS = 10.0 / 60.0;     //When scrolling dont ever drop 
     lastCallTime = currentTime;
     
     [self.player update];
-    if (!self.player.crashed) {
+    
+    if (self.gameState == GameRunning && self.player.crashed) {
+        
+        //Player JUST crashed on the last frame
+        [self bump];
+        [self gameOver];
+    }
+    
+    if (self.gameState != GameOver) {
         [self.background updateWithTimeElapsed:timeElapsed];
         [self.foreground updateWithTimeElapsed:timeElapsed];
         [self.obstacles updateWithTimeElapsed:timeElapsed];
     }
+    
+}
+
+-(MedalType)getMedalForCurrentScore {
+    
+    NSInteger adjustedScore = self.score - (self.bestScore / 5.0);
+    
+    if (adjustedScore >= 45) {
+        return MedalGold;
+    } else if (adjustedScore >= 25) {
+        return MedalSilver;
+    } else if (adjustedScore >= 10) {
+        return MedalBronze;
+    }
+    
+    return MedalNone;
     
 }
 

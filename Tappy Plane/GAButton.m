@@ -31,7 +31,6 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"Something");
     self.fullSizeFrame = self.frame;
     [self touchesMoved:touches withEvent:event];
 }
@@ -55,6 +54,7 @@
     for (UITouch *touch in touches) {
         if (CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
             //Pressed button
+            //Use this because we do not know which selector we are using, so we are sending a message to alert the object that the button had been pressed
             objc_msgSend(self.pressedTarget, self.pressedAction);
         }
     }

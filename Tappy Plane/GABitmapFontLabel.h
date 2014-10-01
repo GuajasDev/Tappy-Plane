@@ -8,11 +8,18 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+typedef enum : NSUInteger {
+    BitmapFontAllignmentLeft,
+    BitmapFontAllignmentCenter,
+    BitmapFontAllignmentRight,
+} BitmapFontAllignment;
+
 @interface GABitmapFontLabel : SKNode
 
 @property (nonatomic) NSString *fontName;
 @property (nonatomic) NSString *text;
 @property (nonatomic) CGFloat letterSpacing;
+@property (nonatomic) BitmapFontAllignment allignment;
 
 -(instancetype)initWithText:(NSString*)text andFontName:(NSString*)fontName;
 

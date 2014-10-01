@@ -8,8 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "GACollectable.h"
+#import "GAGameOverMenu.h"
 
 //GACollectable delegate created in GACollectable. See that class for explanation
-@interface GAGameScene : SKScene <SKPhysicsContactDelegate, GACollectableDelegate>
+@interface GAGameScene : SKScene <SKPhysicsContactDelegate, GACollectableDelegate, GAGameOverMenuDelegate>
 
 @end

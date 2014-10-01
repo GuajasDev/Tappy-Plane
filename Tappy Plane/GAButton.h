@@ -10,7 +10,8 @@
 
 @interface GAButton : SKSpriteNode
 
-//ReadOnly because that ay we dont set one without the other. They are set in tandem
+
+//This lets us have different buttons each doing different things in this one class, without having to specify one class per button. ReadOnly because that ay we dont set one without the other. They are set in tandem
 @property (nonatomic, readonly, weak) id pressedTarget;
 @property (nonatomic, readonly) SEL pressedAction;
 @property (nonatomic) CGFloat pressedScale;

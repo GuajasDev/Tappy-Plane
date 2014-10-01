@@ -26,6 +26,8 @@
 		D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A213EC19B90F610018E28C /* GAGameScene.m */; };
 		D4AA536819BA615D00C7DBCE /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D4AA536719BA615D00C7DBCE /* Graphics.atlas */; };
 		D4AA536B19BA628500C7DBCE /* GAPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AA536A19BA628500C7DBCE /* GAPlane.m */; };
+		D4DD63F119DBC06F001AE1E9 /* GAGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DD63F019DBC06F001AE1E9 /* GAGameOverMenu.m */; };
+		D4DD63F419DBEC79001AE1E9 /* GAGetReadyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DD63F319DBEC79001AE1E9 /* GAGetReadyMenu.m */; };
 		D4EC4C4419D11FE80024C589 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4EC4C4219D11FE80024C589 /* PlanePuffTrail.sks */; };
 		D4EC4C4819D1282A0024C589 /* GAScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */; };
 		D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */; };
@@ -75,6 +77,10 @@
 		D4AA536719BA615D00C7DBCE /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		D4AA536919BA628500C7DBCE /* GAPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPlane.h; sourceTree = "<group>"; };
 		D4AA536A19BA628500C7DBCE /* GAPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPlane.m; sourceTree = "<group>"; };
+		D4DD63EF19DBC06F001AE1E9 /* GAGameOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAGameOverMenu.h; sourceTree = "<group>"; };
+		D4DD63F019DBC06F001AE1E9 /* GAGameOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAGameOverMenu.m; sourceTree = "<group>"; };
+		D4DD63F219DBEC79001AE1E9 /* GAGetReadyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAGetReadyMenu.h; sourceTree = "<group>"; };
+		D4DD63F319DBEC79001AE1E9 /* GAGetReadyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAGetReadyMenu.m; sourceTree = "<group>"; };
 		D4EC4C4219D11FE80024C589 /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
 		D4EC4C4619D1282A0024C589 /* GAScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAScrollingNode.h; sourceTree = "<group>"; };
 		D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAScrollingNode.m; sourceTree = "<group>"; };
@@ -188,6 +194,10 @@
 				D4EC4C9319D612DE0024C589 /* GACollectable.m */,
 				D4EC4CA019DA78F30024C589 /* GAButton.h */,
 				D4EC4CA119DA78F30024C589 /* GAButton.m */,
+				D4DD63EF19DBC06F001AE1E9 /* GAGameOverMenu.h */,
+				D4DD63F019DBC06F001AE1E9 /* GAGameOverMenu.m */,
+				D4DD63F219DBEC79001AE1E9 /* GAGetReadyMenu.h */,
+				D4DD63F319DBEC79001AE1E9 /* GAGetReadyMenu.m */,
 				D4EC4C4919D129F60024C589 /* GAScrollingLayer.h */,
 				D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */,
 				D4EC4C8B19D27CFC0024C589 /* GAObstacleLayer.h */,
@@ -344,7 +354,9 @@
 				D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */,
 				D4EC4C9719D624610024C589 /* GABitmapFontLabel.m in Sources */,
 				D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */,
+				D4DD63F119DBC06F001AE1E9 /* GAGameOverMenu.m in Sources */,
 				D4EC4C9C19D779A30024C589 /* GATilesetTextureProvider.m in Sources */,
+				D4DD63F419DBEC79001AE1E9 /* GAGetReadyMenu.m in Sources */,
 				D4EC4C8A19D19C6A0024C589 /* GAConstants.m in Sources */,
 				D4A213C819B90EFD0018E28C /* GAViewController.m in Sources */,
 				D4EC4C9419D612DE0024C589 /* GACollectable.m in Sources */,

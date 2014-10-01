@@ -35,6 +35,7 @@
 		D4EC4C9719D624610024C589 /* GABitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C9619D624610024C589 /* GABitmapFontLabel.m */; };
 		D4EC4C9919D7779E0024C589 /* TileSetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4EC4C9819D7779E0024C589 /* TileSetGraphics.plist */; };
 		D4EC4C9C19D779A30024C589 /* GATilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C9B19D779A30024C589 /* GATilesetTextureProvider.m */; };
+		D4EC4CA219DA78F30024C589 /* GAButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4CA119DA78F30024C589 /* GAButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		D4EC4C9819D7779E0024C589 /* TileSetGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TileSetGraphics.plist; sourceTree = "<group>"; };
 		D4EC4C9A19D779A30024C589 /* GATilesetTextureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GATilesetTextureProvider.h; sourceTree = "<group>"; };
 		D4EC4C9B19D779A30024C589 /* GATilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GATilesetTextureProvider.m; sourceTree = "<group>"; };
+		D4EC4CA019DA78F30024C589 /* GAButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAButton.h; sourceTree = "<group>"; };
+		D4EC4CA119DA78F30024C589 /* GAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 				D4AA536A19BA628500C7DBCE /* GAPlane.m */,
 				D4EC4C9219D612DE0024C589 /* GACollectable.h */,
 				D4EC4C9319D612DE0024C589 /* GACollectable.m */,
+				D4EC4CA019DA78F30024C589 /* GAButton.h */,
+				D4EC4CA119DA78F30024C589 /* GAButton.m */,
 				D4EC4C4919D129F60024C589 /* GAScrollingLayer.h */,
 				D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */,
 				D4EC4C8B19D27CFC0024C589 /* GAObstacleLayer.h */,
@@ -333,6 +338,7 @@
 			files = (
 				D4EC4C8D19D27CFC0024C589 /* GAObstacleLayer.m in Sources */,
 				D4AA536B19BA628500C7DBCE /* GAPlane.m in Sources */,
+				D4EC4CA219DA78F30024C589 /* GAButton.m in Sources */,
 				D4EC4C4819D1282A0024C589 /* GAScrollingNode.m in Sources */,
 				D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */,
 				D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */,

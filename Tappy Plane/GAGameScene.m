@@ -13,6 +13,7 @@
 #import "GAObstacleLayer.h"
 #import "GABitmapFontLabel.h"
 #import "GATilesetTextureProvider.h"
+#import "GAGetReadyMenu.h"
 
 typedef enum : NSUInteger {
     GameReady,
@@ -28,6 +29,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) GAObstacleLayer *obstacles;
 @property (nonatomic) GABitmapFontLabel *scoreLabel;
 @property (nonatomic) GAGameOverMenu *gameOverMenu;
+@property (nonatomic) GAGetReadyMenu *getReadyMenu;
 
 @property (nonatomic) SKNode *world;
 
@@ -107,6 +109,10 @@ static NSString *const kGAKeyBestScore = @"BestScore";
         _gameOverMenu = [[GAGameOverMenu alloc] initWithSize:size];
         _gameOverMenu.delegate = self;
         
+        //Setup get ready menu
+        _getReadyMenu = [[GAGetReadyMenu alloc] initWithSize:size andPlanePosition:CGPointMake(self.size.width * 0.3, self.size.height * 0.5)];
+        [self addChild:_getReadyMenu];
+        
         //Start a new game
         [self newGame];
 
@@ -167,6 +173,7 @@ static NSString *const kGAKeyBestScore = @"BestScore";
     SKAction *startNewGame = [SKAction runBlock:^{
         [self newGame];
         [self.gameOverMenu removeFromParent];
+        [self.getReadyMenu show];
     }];
     
     SKAction *fadeTransition = [SKAction sequence:@[[SKAction fadeInWithDuration:0.4],
@@ -249,6 +256,7 @@ static NSString *const kGAKeyBestScore = @"BestScore";
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     if (self.gameState == GameReady) {
+        [self.getReadyMenu hide];
         self.player.physicsBody.affectedByGravity = YES;
         self.obstacles.scrolling = YES;
         self.gameState = GameRunning;

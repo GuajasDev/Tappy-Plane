@@ -14,6 +14,7 @@
 #import "GABitmapFontLabel.h"
 #import "GATilesetTextureProvider.h"
 #import "GAGetReadyMenu.h"
+#import "GAWeatherLayer.h"
 
 typedef enum : NSUInteger {
     GameReady,
@@ -30,6 +31,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) GABitmapFontLabel *scoreLabel;
 @property (nonatomic) GAGameOverMenu *gameOverMenu;
 @property (nonatomic) GAGetReadyMenu *getReadyMenu;
+@property (nonatomic) GAWeatherLayer *weather;
 
 @property (nonatomic) SKNode *world;
 
@@ -95,6 +97,10 @@ static NSString *const kGAKeyBestScore = @"BestScore";
         _player = [[GAPlane alloc] init];
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
+        
+        //Setup weather (in front of the player)
+        _weather = [[GAWeatherLayer alloc] initWithSize:size];
+        [_world addChild:_weather];
         
         //Setup score label
         _scoreLabel = [[GABitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
@@ -187,6 +193,31 @@ static NSString *const kGAKeyBestScore = @"BestScore";
 -(void)newGame {
     //Randomise tileset
     [[GATilesetTextureProvider getProvider] randomiseTileset];
+    
+    //Set weather conditions
+    NSString *tilesetName = [GATilesetTextureProvider getProvider].currentTilesetName;
+    self.weather.conditions = WeatherClear;
+    
+    if ([tilesetName isEqualToString:kGATilesetIce]) {
+        //1 in 2 chance for snow on ice tileset
+        if (arc4random_uniform(2) == 0) {
+            self.weather.conditions = WeatherSnowing;
+        }
+    }
+    
+    if ([tilesetName isEqualToString:kGATilesetSnow]) {
+        //1 in 3 chance of snowing on snow tileset
+        if (arc4random_uniform(3) == 0) {
+            self.weather.conditions = WeatherSnowing;
+        }
+    }
+    
+    if ([tilesetName isEqualToString:kGATilesetGrass] || [tilesetName isEqualToString:kGATilesetDirt]) {
+        //1 in 3 chance of rain on dirt and grass tilesets
+        if (arc4random_uniform(3) == 0) {
+            self.weather.conditions  = WeatherRaining;
+        }
+    }
     
     //Reset layers
     self.foreground.position = CGPointZero;

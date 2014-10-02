@@ -13,5 +13,9 @@
 extern const uint32_t kGACategoryPlane;
 extern const uint32_t kGACategoryGround;
 extern const uint32_t kGACategoryCollectable;
+extern NSString *const kGATilesetGrass;
+extern NSString *const kGATilesetDirt;
+extern NSString *const kGATilesetIce;
+extern NSString *const kGATilesetSnow;
 
 @end

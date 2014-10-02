@@ -12,7 +12,7 @@
 @interface GAObstacleLayer : GAScrollingNode
 
 //See GACollectible for explanation on what's below
-@property (nonatomic, weak) id<GACollectableDelegate> collectableDelegate;
+@property (nonatomic, weak) id <GACollectableDelegate> collectableDelegate;
 
 @property (nonatomic) CGFloat floor;
 @property (nonatomic) CGFloat ceiling;

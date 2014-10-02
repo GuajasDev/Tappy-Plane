@@ -15,6 +15,7 @@
 #import "GATilesetTextureProvider.h"
 #import "GAGetReadyMenu.h"
 #import "GAWeatherLayer.h"
+#import "SoundManager.h"
 
 typedef enum : NSUInteger {
     GameReady,
@@ -52,6 +53,9 @@ static NSString *const kGAKeyBestScore = @"BestScore";
         //Used this when setting up to make sure that the size is 568x320 intead of 320x568
         //NSLog(@"Size: %f %f", size.width, size.height);
         
+        //Init our audioplayer. We can choose any sound to get it ready to play
+        [[SoundManager sharedManager] prepareToPlayWithSound:@"Crunch.caf"];
+        
         //Setup background colour to sky blue
         self.backgroundColor = [SKColor colorWithRed:213/255.0 green:237/255.0 blue:247/255.0 alpha:1.0];
         
@@ -59,7 +63,7 @@ static NSString *const kGAKeyBestScore = @"BestScore";
         SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
         
         //Setup physics
-        self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+        self.physicsWorld.gravity = CGVectorMake(0.0, - 5.5);
         self.physicsWorld.contactDelegate = self;
         
         //Setup world
@@ -79,7 +83,7 @@ static NSString *const kGAKeyBestScore = @"BestScore";
         //Setup obstacle layer
         _obstacles = [[GAObstacleLayer alloc] init];
         _obstacles.collectableDelegate = self;
-        _obstacles.horizontalScrollSpeed = - 80.0;
+        _obstacles.horizontalScrollSpeed = - 110.0;
         _obstacles.scrolling = YES;
         _obstacles.floor = 0.0;
         _obstacles.ceiling = self.size.height;
@@ -89,7 +93,7 @@ static NSString *const kGAKeyBestScore = @"BestScore";
         _foreground = [[GAScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],
                                                                [self generateGroundTile],
                                                                [self generateGroundTile]]];
-        _foreground.horizontalScrollSpeed = - 80.0;
+        _foreground.horizontalScrollSpeed = - 110.0;
         _foreground.scrolling = YES;
         [_world addChild:_foreground];
         

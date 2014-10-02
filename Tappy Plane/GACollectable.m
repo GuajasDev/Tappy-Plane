@@ -12,6 +12,8 @@
 
 -(void)collect {
     
+    [self.collectionSound play];
+    
     if (self.delegate) {
         //If we were assigned a delegate, call the wasCollected and pass self as an instance
         [self.delegate wasCollected:self];

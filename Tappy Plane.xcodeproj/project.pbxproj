@@ -32,6 +32,12 @@
 		D4DD63F819DCD2B2001AE1E9 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DD63F619DCD2B2001AE1E9 /* spark.png */; };
 		D4DD63FA19DCD721001AE1E9 /* RainEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4DD63F919DCD721001AE1E9 /* RainEffect.sks */; };
 		D4DD63FF19DCD9BF001AE1E9 /* GAWeatherLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DD63FE19DCD9BF001AE1E9 /* GAWeatherLayer.m */; };
+		D4DD640219DCE8DB001AE1E9 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DD640119DCE8DB001AE1E9 /* SoundManager.m */; };
+		D4DD640919DCEC5A001AE1E9 /* Click.caf in Resources */ = {isa = PBXBuildFile; fileRef = D4DD640419DCEC5A001AE1E9 /* Click.caf */; };
+		D4DD640A19DCEC5A001AE1E9 /* Collect.caf in Resources */ = {isa = PBXBuildFile; fileRef = D4DD640519DCEC5A001AE1E9 /* Collect.caf */; };
+		D4DD640B19DCEC5A001AE1E9 /* Crunch.caf in Resources */ = {isa = PBXBuildFile; fileRef = D4DD640619DCEC5A001AE1E9 /* Crunch.caf */; };
+		D4DD640C19DCEC5A001AE1E9 /* Engine.caf in Resources */ = {isa = PBXBuildFile; fileRef = D4DD640719DCEC5A001AE1E9 /* Engine.caf */; };
+		D4DD640D19DCEC5A001AE1E9 /* Rain.caf in Resources */ = {isa = PBXBuildFile; fileRef = D4DD640819DCEC5A001AE1E9 /* Rain.caf */; };
 		D4EC4C4419D11FE80024C589 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4EC4C4219D11FE80024C589 /* PlanePuffTrail.sks */; };
 		D4EC4C4819D1282A0024C589 /* GAScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */; };
 		D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC4C4A19D129F60024C589 /* GAScrollingLayer.m */; };
@@ -90,6 +96,13 @@
 		D4DD63F919DCD721001AE1E9 /* RainEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEffect.sks; sourceTree = "<group>"; };
 		D4DD63FD19DCD9BF001AE1E9 /* GAWeatherLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAWeatherLayer.h; sourceTree = "<group>"; };
 		D4DD63FE19DCD9BF001AE1E9 /* GAWeatherLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAWeatherLayer.m; sourceTree = "<group>"; };
+		D4DD640019DCE8DB001AE1E9 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		D4DD640119DCE8DB001AE1E9 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		D4DD640419DCEC5A001AE1E9 /* Click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.caf; sourceTree = "<group>"; };
+		D4DD640519DCEC5A001AE1E9 /* Collect.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collect.caf; sourceTree = "<group>"; };
+		D4DD640619DCEC5A001AE1E9 /* Crunch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crunch.caf; sourceTree = "<group>"; };
+		D4DD640719DCEC5A001AE1E9 /* Engine.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Engine.caf; sourceTree = "<group>"; };
+		D4DD640819DCEC5A001AE1E9 /* Rain.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.caf; sourceTree = "<group>"; };
 		D4EC4C4219D11FE80024C589 /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
 		D4EC4C4619D1282A0024C589 /* GAScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAScrollingNode.h; sourceTree = "<group>"; };
 		D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAScrollingNode.m; sourceTree = "<group>"; };
@@ -220,7 +233,10 @@
 				D4EC4C4719D1282A0024C589 /* GAScrollingNode.m */,
 				D4EC4C9519D624610024C589 /* GABitmapFontLabel.h */,
 				D4EC4C9619D624610024C589 /* GABitmapFontLabel.m */,
+				D4DD640019DCE8DB001AE1E9 /* SoundManager.h */,
+				D4DD640119DCE8DB001AE1E9 /* SoundManager.m */,
 				D4A213CE19B90EFD0018E28C /* Images.xcassets */,
+				D4DD640319DCEC5A001AE1E9 /* Sounds */,
 				D4627AAB19CFF9F700AAFD72 /* Particle Effects */,
 				D4627A3219CFD68700AAFD72 /* Resources */,
 				D4A213B819B90EFD0018E28C /* Supporting Files */,
@@ -256,6 +272,18 @@
 				D4A213DE19B90EFD0018E28C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4DD640319DCEC5A001AE1E9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D4DD640419DCEC5A001AE1E9 /* Click.caf */,
+				D4DD640519DCEC5A001AE1E9 /* Collect.caf */,
+				D4DD640619DCEC5A001AE1E9 /* Crunch.caf */,
+				D4DD640719DCEC5A001AE1E9 /* Engine.caf */,
+				D4DD640819DCEC5A001AE1E9 /* Rain.caf */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,11 +367,16 @@
 				D4DD63F819DCD2B2001AE1E9 /* spark.png in Resources */,
 				D4DD63FA19DCD721001AE1E9 /* RainEffect.sks in Resources */,
 				D4DD63F719DCD2B2001AE1E9 /* SnowEffect.sks in Resources */,
+				D4DD640D19DCEC5A001AE1E9 /* Rain.caf in Resources */,
 				D4627A3119CFD4FA00AAFD72 /* PlaneAnimations.plist in Resources */,
 				D4EC4C4419D11FE80024C589 /* PlanePuffTrail.sks in Resources */,
 				D4A213CF19B90EFD0018E28C /* Images.xcassets in Resources */,
 				D4AA536819BA615D00C7DBCE /* Graphics.atlas in Resources */,
+				D4DD640C19DCEC5A001AE1E9 /* Engine.caf in Resources */,
 				D4EC4C9919D7779E0024C589 /* TileSetGraphics.plist in Resources */,
+				D4DD640B19DCEC5A001AE1E9 /* Crunch.caf in Resources */,
+				D4DD640A19DCEC5A001AE1E9 /* Collect.caf in Resources */,
+				D4DD640919DCEC5A001AE1E9 /* Click.caf in Resources */,
 				D4A213C519B90EFD0018E28C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +404,7 @@
 				D4A213C219B90EFD0018E28C /* GAAppDelegate.m in Sources */,
 				D4EC4C4B19D129F60024C589 /* GAScrollingLayer.m in Sources */,
 				D4EC4C9719D624610024C589 /* GABitmapFontLabel.m in Sources */,
+				D4DD640219DCE8DB001AE1E9 /* SoundManager.m in Sources */,
 				D4A213ED19B90F610018E28C /* GAGameScene.m in Sources */,
 				D4DD63F119DBC06F001AE1E9 /* GAGameOverMenu.m in Sources */,
 				D4EC4C9C19D779A30024C589 /* GATilesetTextureProvider.m in Sources */,

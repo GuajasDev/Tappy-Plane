@@ -9,6 +9,7 @@
 #import "GAPlane.h"
 #import "GAConstants.h"
 #import "GACollectable.h"
+#import "SoundManager.h"
 
 @interface GAPlane()
 
@@ -16,6 +17,7 @@
 @property (nonatomic) SKEmitterNode *puffTrailEmitter;
 @property (nonatomic) CGFloat puffTrailBirthRate;
 @property (nonatomic) SKAction *crashTintAction;
+@property (nonatomic) Sound *engineSound;
 
 @end
 
@@ -100,6 +102,10 @@ static const CGFloat kGAMaxAltitude = 300.0;
         SKAction *removeTint = [SKAction colorizeWithColorBlendFactor:0.0 duration:0.3];
         _crashTintAction = [SKAction sequence:@[tint, removeTint]];
         
+        //Setup engine sound
+        _engineSound = [Sound soundNamed:@"Engine.caf"];
+        _engineSound.looping = YES;
+        
         [self setRandomColor];
         
     }
@@ -123,10 +129,13 @@ static const CGFloat kGAMaxAltitude = 300.0;
     _engineRunning = engineRunning && !self.crashed;    //Both on the right have to be YES for _engineRunning to be Yes, if one is NO then it will be NO
     
     if (engineRunning) {
+        [self.engineSound play];
+        [self.engineSound fadeIn:1.0];
         self.puffTrailEmitter.targetNode = self.parent; //Makes the emitter act on the planes parent so it doesnt go up and down with it
         [self actionForKey:kGAKeyPlaneAnimation].speed = 1;
         self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     } else {
+        [self.engineSound fadeOut:0.5];
         [self actionForKey:kGAKeyPlaneAnimation].speed = 0;
         self.puffTrailEmitter.particleBirthRate = 0;
     }
@@ -168,6 +177,7 @@ static const CGFloat kGAMaxAltitude = 300.0;
             //We hit the ground
             self.crashed = YES;
             [self runAction:self.crashTintAction];
+            [[SoundManager sharedManager] playSound:@"Crunch.caf"];
         }
         
         if (body.categoryBitMask == kGACategoryCollectable) {
@@ -211,9 +221,10 @@ static const CGFloat kGAMaxAltitude = 300.0;
         [self.physicsBody applyForce:CGVectorMake(0.0, 100.0)];
     }
     
-    //Gives a value of speed no less than -400 and no more than 400 which we divide by 400 to get between -1 and 1 radians (57.3 degrees) of rotation. So you never rotate more than 57.3 degrees, which you do at a speed of 400
+    //For the zRotation, it gives a value of speed no less than -400 and no more than 400 which we divide by 400 to get between -1 and 1 radians (57.3 degrees) of rotation. So you never rotate more than 57.3 degrees, which you do at a speed of 400. For the engine sound, it gives a value between 0 and 300, which we then divide by 300 to get a value between 0 and 1, which we then multiply by 0.75 to get a value between 0 and 0.75 and then we add 0.25 to get a value between 0.25 and 1.0.
     if (!self.crashed) {
         self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy, 400), - 400) / 400.0;
+        self.engineSound.volume = 0.25 + (fmaxf(fminf(self.physicsBody.velocity.dy, 300), 0) / 300.0) * 0.75;
     }
     
 }

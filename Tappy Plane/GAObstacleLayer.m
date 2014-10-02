@@ -9,6 +9,7 @@
 #import "GAObstacleLayer.h"
 #import "GAConstants.h"
 #import "GATilesetTextureProvider.h"
+#import "SoundManager.h"
 
 @interface GAObstacleLayer ()
 
@@ -191,6 +192,7 @@ static NSString *const kGAKeyCollectableStar = @"CollectableStar";
         object = [GACollectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
         ((GACollectable*)object).pointValue = 1;
         ((GACollectable*)object).delegate = self.collectableDelegate;   //collectableDelegate is defined in GameScene as 'self', so it is the scene. Therefore we are saying that the collectable star's delegate is the scene
+        ((GACollectable*)object).collectionSound = [Sound soundNamed:@"Collect.caf"];
         object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
         object.physicsBody.categoryBitMask = kGACategoryCollectable;
         object.physicsBody.dynamic = NO;    //Not affected by any physics, except contact

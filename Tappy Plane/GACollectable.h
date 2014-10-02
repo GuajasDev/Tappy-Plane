@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SoundManager.h"
 
 //Declare our class
 @class GACollectable;
@@ -28,7 +29,8 @@
 @property (nonatomic, weak) id <GACollectableDelegate> delegate;
 
 //Define public properties and functions
-@property(nonatomic) NSInteger pointValue;
+@property (nonatomic) NSInteger pointValue;
+@property (nonatomic) Sound *collectionSound;
 
 -(void)collect;
 

@@ -7,11 +7,13 @@
 //
 
 #import "GAWeatherLayer.h"
+#import "SoundManager.h"
 
 @interface GAWeatherLayer ()
 
 @property (nonatomic) SKEmitterNode *rainEmitter;
 @property (nonatomic) SKEmitterNode *snowEmitter;
+@property (nonatomic) Sound *rainSound;
 
 @end
 
@@ -26,6 +28,11 @@
         NSString *rainEffectPath = [[NSBundle mainBundle] pathForResource:@"RainEffect" ofType:@"sks"];
         _rainEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:rainEffectPath];
         _rainEmitter.position = CGPointMake(size.width * 0.5 + 23, size.height + 5);
+        
+        //Setup rain sound
+        _rainSound = [Sound soundNamed:@"Rain.caf"];
+        _rainSound.looping = YES;
+        _rainSound.volume = 0.8;
         
         //Load rain effect
         NSString *snowEffectPath = [[NSBundle mainBundle] pathForResource:@"SnowEffect" ofType:@"sks"];
@@ -48,9 +55,16 @@
         //Remove existing weather conditions
         [self removeAllChildren];
         
+        //Stop any existing sounds from playing
+        if (self.rainSound.playing) {
+            [self.rainSound fadeOut:1.0];
+        }
+        
         //Add weather conditions
         switch (conditions) {
             case WeatherRaining:
+                [self.rainSound play];
+                [self.rainSound fadeIn:1.0];
                 [self addChild:self.rainEmitter];
                 [self.rainEmitter advanceSimulationTime:5];     //We do this so it is already raining (rather than begining to rain) when the game starts
                 break;
